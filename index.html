@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Áreas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #fffeff;
+        }
+
+        h1 {
+            color: #9138b1;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        select, input, button {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #dc60cb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c15096;
+        }
+
+        #imagenResultado {
+            max-width: 100%;
+            max-height: 200px;
+        }
+
+        #resultadoArea {
+            font-size: 1.5em; 
+            padding: 20px; 
+            border: 2px solid #936ea0; 
+            border-radius: 10px; 
+            margin-top: 20px; 
+            background-color: #e9cccc; 
+            min-height: 100px; 
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Ocultar flechas en campo numérico */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Áreas</h1>
+    <form id="votoForm">
+        <label for="seccion">Selecciona una figura:</label>
+        <br>
+        <select id="seccion" name="seccion">
+            <option value="cuadrado">Cuadrado</option>
+            <option value="triangulo">Triángulo</option>
+            <option value="circulo">Círculo</option>
+        </select>
+        <br>
+        <button type="submit">Seleccionar</button>
+    </form>
+
+    <div id="resultadoImagen">
+        <img id="imagenResultado" src="" alt="Imagen de resultado">
+    </div>
+
+    <div id="calcular" class="hidden">
+        <form id="form-sueldo">
+            <label for="medida">Base:</label>
+            <br>
+            <input type="number" id="medida" step="any" required>
+            <br>
+            <div id="alturaDiv" class="hidden">
+                <label for="altura">Altura:</label>
+                <br>
+                <input type="number" id="altura" step="any">
+                <br>
+            </div>
+            <button type="button" onclick="calcular()">Calcular Área</button>
+        </form>
+        <div id="resultadoArea"></div>
+    </div>
+
+    <script src="funciones.js"></script>
+</body>
+</html>
+
+
+
+
+
